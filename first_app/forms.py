@@ -4,6 +4,7 @@ from django.core import validators
 class PracticeForm(forms.Form):
     name = forms.CharField(label='User Name', widget=forms.TextInput(attrs = { 'placeholder' : 'Enter Your Name' }))
     email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
     check = forms.BooleanField()
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     contact = forms.CharField(initial='01XX')
