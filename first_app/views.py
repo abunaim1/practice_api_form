@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import PracticeForm
+from . import models
 # Create your views here.
 
 def apiForm(request):
@@ -12,4 +13,5 @@ def apiForm(request):
     return render(request, 'api_form.html', {'form' : form})
 
 def djangoModel(request):
-    return render(request, 'django_model.html')
+    model = models.ExampleModel.objects.all()
+    return render(request, 'django_model.html', {'model':model})
